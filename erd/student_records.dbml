@@ -1,0 +1,21 @@
+Table students {
+  student_id int [pk, increment]
+  first_name varchar
+  last_name varchar
+  email varchar
+  enrollment_year int
+}
+
+Table courses {
+  course_id int [pk, increment]
+  course_name varchar
+  course_code varchar
+  credits int
+}
+
+Table enrollments {
+  enrollment_id int [pk, increment]
+  student_id int [ref: > students.student_id]
+  course_id int [ref: > courses.course_id]
+  grade varchar
+}
